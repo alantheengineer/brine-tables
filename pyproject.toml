@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brine-tables"
+version = "0.1.0"
+description = "SALTSOLT tables and reference values for OPM SALTMC brines, from PHREEQC"
+authors = [{ name = "Dr Alan Tominey" }]
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = ["phreeqpython>=1.5"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+brine-tables = "brine_tables.cli:main"
+
+[tool.setuptools]
+packages = ["brine_tables"]
+
+[tool.ruff]
+line-length = 100
